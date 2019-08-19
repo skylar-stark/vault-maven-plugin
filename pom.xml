@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.github.skylarstark</groupId>
+	<artifactId>vault-maven-plugin</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Vault Maven Plugin</name>
+	<description>Maven plugin to read project properties from a Hashicorp Vault instance</description>
+	<packaging>maven-plugin</packaging>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/skylar-stark/vault-maven-plugin</url>
+		<connection>scm:git:git://github.com/skylar-stark/vault-maven-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com:skylar-stark/vault-maven-plugin.git</developerConnection>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>skylar-stark</id>
+			<name>Skylar Stark</name>
+			<email>stark.skylar@gmail.com</email>
+		</developer>
+	</developers>
+
+	<properties>
+		<java.version>12</java.version>
+		<maven.compiler.source>12</maven.compiler.source>
+		<maven.compiler.target>12</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<maven.version>3.6.0</maven.version>
+		<slf4j.version>1.7.28</slf4j.version>
+		<vault-java-client.version>0.0.1-SNAPSHOT</vault-java-client.version>
+	</properties>
+
+	<dependencies>
+		<!-- Maven -->
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-artifact</artifactId>
+			<version>${maven.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-core</artifactId>
+			<version>${maven.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-model</artifactId>
+			<version>${maven.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+			<version>${maven.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugin-tools</groupId>
+			<artifactId>maven-plugin-annotations</artifactId>
+			<version>${maven.version}</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Vault Java Client -->
+		<dependency>
+			<groupId>com.github.skylarstark</groupId>
+			<artifactId>vault-java-client</artifactId>
+			<version>${vault-java-client.version}</version>
+		</dependency>
+
+		<!-- SLF4J -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-plugin-plugin</artifactId>
+				<version>${maven.version}</version>
+				<configuration>
+					<skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
