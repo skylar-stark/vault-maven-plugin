@@ -36,8 +36,9 @@
 		<maven.compiler.target>12</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<maven.version>3.6.0</maven.version>
-		<slf4j.version>1.7.28</slf4j.version>
+		<maven.version>3.6.3</maven.version>
+		<maven-plugin.version>3.6.0</maven-plugin.version>
+		<slf4j.version>1.7.30</slf4j.version>
 		<vault-java-client.version>0.0.1-SNAPSHOT</vault-java-client.version>
 	</properties>
 
@@ -70,7 +71,7 @@
 		<dependency>
 			<groupId>org.apache.maven.plugin-tools</groupId>
 			<artifactId>maven-plugin-annotations</artifactId>
-			<version>${maven.version}</version>
+			<version>${maven-plugin.version}</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -94,7 +95,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-plugin-plugin</artifactId>
-				<version>${maven.version}</version>
+				<version>${maven-plugin.version}</version>
 				<configuration>
 					<skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
 				</configuration>
